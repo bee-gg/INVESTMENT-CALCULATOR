@@ -1,4 +1,4 @@
-export default function Results(){
+export default function Results({ formData }){
   return (
     <table id="result"> 
       <thead>
@@ -11,10 +11,10 @@ export default function Results(){
       <tbody>
         <tr>
           <td>1</td>
-          <td>2</td>
-          <td>3</td>
-          <td>4</td>
-          <td>5</td>
+          <td>{formData.initialInvestment}</td>
+          <td>{formData.annualInvestment}</td>
+          <td>{formData.expectedReturn}</td>
+          <td>{formData.duration}</td>
         </tr>
       </tbody>
     </table>
