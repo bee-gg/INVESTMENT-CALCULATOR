@@ -5,24 +5,27 @@ import UserInputContainer from "./components/UserInputContainer";
 
 export default function App() {
   const [formData, setFormData] = useState({
-    initialInvestment: null,
-    annualInvestment: null,
-    expectedReturn: null,
-    duration: null,
+    initialInvestment: '',
+    annualInvestment: '',
+    expectedReturn: '',
+    duration: '',
   });
+  
 
-  function handleChange(e, identifier) {
-    setFormData({
-      ...formData,
-      [identifier]: e.target.value,
-    });
-  }
-
+  //console.log(calculateInvestmentResults);
+  //console.log(annualData);
+  
+    function handleChange(e, identifier) {
+      setFormData({
+        ...formData,
+        [identifier]: +e.target.value,
+      });
+    }
   return (
     <>
       <Header />
-      <UserInputContainer handleChange={handleChange} formData={formData} />
-      <Results formData={formData} />
+      <UserInputContainer onChange={handleChange} formData={formData} />
+      <Results formData={formData} investmentValue={formData.initialInvestment}/>
     </>
   );
 }
