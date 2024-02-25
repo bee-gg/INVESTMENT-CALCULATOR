@@ -11,7 +11,7 @@ export default function App() {
     duration: "",
   });
 
-  const inputValid = formData.duration >=1;
+  const inputValid = formData.duration >= 1 || formData.duration === "";
 
   function handleChange(e, identifier) {
     setFormData({
@@ -23,6 +23,7 @@ export default function App() {
     <>
       <Header />
       <UserInputContainer onChange={handleChange} formData={formData} />
+      {!inputValid && <p className="center">Please enter a value above 0.</p> }
       {inputValid && <Results formData={formData} />}
     </>
   );
