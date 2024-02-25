@@ -8,6 +8,7 @@ export default function UserInputContainer({ onChange, formData }) {
             type="number"
             onChange={(e) => onChange(e, "initialInvestment")}
             value={formData.initialInvestment}
+            required
           ></input>
         </p>
         <p>
@@ -16,6 +17,7 @@ export default function UserInputContainer({ onChange, formData }) {
             type="number"
             onChange={(e) => onChange(e, "annualInvestment")}
             value={formData.annualInvestment}
+            required
           ></input>
         </p>
       </div>
@@ -26,6 +28,7 @@ export default function UserInputContainer({ onChange, formData }) {
             type="number"
             onChange={(e) => onChange(e, "expectedReturn")}
             value={formData.expectedReturn}
+            required
           ></input>
         </p>
         <p>
@@ -34,6 +37,7 @@ export default function UserInputContainer({ onChange, formData }) {
             type="number"
             onChange={(e) => onChange(e, "duration")}
             value={formData.duration}
+            required
           ></input>
         </p>
       </div>
